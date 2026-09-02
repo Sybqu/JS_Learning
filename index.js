@@ -62,3 +62,27 @@ reset.onclick = function(){
     count = 0 ;
     contlabel.textContent = count;
 }
+
+// MATH object like math.h teehee
+
+//let x = 3.2;
+//let y=2;
+//let z;
+//z = Math.round(x);
+//console.log(z);
+// math.pow(x,y);
+
+//ceil , floor , truncate etc..
+
+// randomnm = Math.random() [0,1]
+
+// Random number generator 
+
+const min = 66;
+const max = 99;
+let randomNum;
+document.getElementById("brnd").onclick = function(){
+
+   randomNum = Math.floor(Math.random()*(max-min));
+   document.getElementById("rand").textContent = randomNum.toString();
+}
