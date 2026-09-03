@@ -24,4 +24,5 @@ body{
 
 .buttons:hover{
     background-color: green;
+    display:flex;
 }
