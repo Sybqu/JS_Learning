@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="heading1">First Ever Heading? :wink:</h1>
+    <h1 id="heading1" class="heading">First Ever Heading? :wink:</h1>
     <p id = "random-para?">Yuri time</p>
     zindagi badi fah?
     <div>
         user name :<form id="usrform">
-            <input type="text" id="txt" placeholder="Enter username">
+            <input type="text" id="txt" placeholder="Enter username" class="buttons">
             <button type="button" id="usr" class="buttons"> SUbmit</button>
 
         </form>
@@ -31,6 +31,22 @@
     <button id="brnd" class="buttons">Click me TO gEnerate a random number HAHA</button><br>
     <LABEl> Random number :</LABEl><p id="rand">NUmber WIll APpear Here PRObably?</p>
 </div>
+<BR><BR>
+<div>
+    <input type="checkbox" id="cb1" class="radiobtn">
+    <label for="cb1" class="btn">Subscribe?</label><Br><br>
+    <input type="radio" id="cb2" class="btn" name="payment">
+    <label for="cb2">Visaaa?</label><BR>
+    <input type="radio" class="radiobtn" id="cb3" name="payment">
+    <label for="cb3">Dihhhhh?</label></Br>
+    <input type="radio" class="radiobtn" id="cb4" name="payment">
+    <label for="cb4">GPAY?</label><br><br>
+    <button type="button" id="sbm" class="buttons"> SUBMIT </button>
+
+    <p id="sb_result"></p>
+    <p id="pay_result"></p>
+</div>
+
 <script src = "index.js"></script>
 </body>
 </html>

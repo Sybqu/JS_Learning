@@ -86,3 +86,69 @@ document.getElementById("brnd").onclick = function(){
    randomNum = Math.floor(Math.random()*(max-min));
    document.getElementById("rand").textContent = randomNum.toString();
 }
+
+//COnditional statements Skip.
+
+function greeter() {
+    // Create a Date object to access time methods
+    const now = new Date();
+    
+    // Get the current hour (0-23)
+    const hours = now.getHours();
+        let time_rn;
+    if (hours >= 5 && hours < 12) {
+        time_rn = "SLeepy Time mwwwhh nyaaa~";
+    } else if (hours >= 12 && hours < 18) {
+        time_rn = "Wake the Fuck Up Samurai We've got a city to burn";
+    } else {
+        time_rn = "G00N G00N G00N";
+    }
+    const element = document.getElementById("heading1");
+    if (element) {
+        element.textContent = `${time_rn}`;
+    }    
+    console.log(time_rn);
+}
+
+greeter();
+
+// Checked Property
+
+const cb1 = document.getElementById("cb1");
+const cb2 = document.getElementById("cb2");
+const cb3 = document.getElementById("cb3");
+const cb4 = document.getElementById("cb4");
+
+const sbm = document.getElementById("sbm");
+const sb_result = document.getElementById("sb_result");
+const pay_result = document.getElementById("pay_result");
+
+sbm.onclick = function(){
+
+    if(cb1.checked){
+        sb_result.textContent = "Congratulations ur now subscribed !!!";
+          if(cb2.checked){
+        pay_result.textContent = "You selected Visaaa 💳";
+    }
+    else if(cb3.checked){
+        pay_result.textContent = "You selected Dihhhhh 🍆";
+    }
+    else if(cb4.checked){
+        pay_result.textContent = "You selected GPAY 💰";
+    }
+    else{
+        pay_result.textContent = "Please select a payment method.";
+    }
+    }
+    else{
+        sb_result.textContent = "Fuck YOU ur NOT subscribed !!!";
+    }
+}
+// TERNARY OPERATORS (skip)
+// SWITCH CASE (slip)
+// STRING METHODS (skip)
+// STRING Slicing (skip)
+// METHOD Chaining (skip)
+// LOGICAL Operators (skip)
+// LOOPS (skip)
+// Number Guessing game
