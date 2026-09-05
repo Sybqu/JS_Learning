@@ -152,3 +152,68 @@ sbm.onclick = function(){
 // LOGICAL Operators (skip)
 // LOOPS (skip)
 // Number Guessing game
+// functions
+
+function despicableme(name){
+    console.log("Who will u be tn thats the question" + NAME);
+}
+
+// arrays in JS
+// .push(val) and .pop() are inbuilt
+// .unshift(val) .length() .indexOf(val)
+// Spread Operator = ... allows an iterable like string or array to be expanded into separate elements
+// Rest Parameter : Packing , bundles separate elemenets into array
+
+const f1 = "orange";
+const f2 = "apple";
+const f3 = "grape";
+
+function openFridge(...fruits){
+    console.log(...fruits);
+}
+openFridge(f1,f2,f3);
+
+// RANDOM PASSWORD GENERATOR
+ 
+function genpass(length, IncLC, IncUC, IncNum, IncSym) {
+
+    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+    const uppercaseChars = lowercaseChars.toUpperCase();
+    const numbers = "0123456789";
+    const symbols = "!@#$%^&*()_+=-/.,';][{}|\\:<>?";
+
+    let allowedchars = "";
+    let password = "";
+
+    allowedchars += IncLC ? lowercaseChars : "";
+    allowedchars += IncUC ? uppercaseChars : "";
+    allowedchars += IncNum ? numbers : "";
+    allowedchars += IncSym ? symbols : "";
+
+    if (allowedchars.length == 0) {
+        window.alert("stop fucking around or you'll get hacked");
+        return "";
+    }
+
+    if (length < 8) {
+        window.alert("At least 8 chars long");
+        return "";
+    }
+
+    for (let i = 0; i < length; i++) {
+        const rndIDX = Math.floor(Math.random() * allowedchars.length);
+        password += allowedchars[rndIDX];
+    }
+
+    console.log("password suggestion :" + password);
+    return password;
+}
+
+
+const passLen = 8;
+const IncLC = true;
+const IncUC = true;
+const IncNum = true;
+const IncSym = true;
+
+const random_pass = genpass(passLen, IncLC, IncUC, IncNum, IncSym);
