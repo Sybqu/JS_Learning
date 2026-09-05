@@ -46,6 +46,33 @@
     <p id="sb_result"></p>
     <p id="pay_result"></p>
 </div>
+<h2>Password Generator</h2>
+<label for="length">Password Length:</label>
+<input type="number" id="length" value="8" min="8">
+<br><br>
+<label>
+    <input type="checkbox" id="IncLC" checked>
+    Include Lowercase
+</label>
+<br>
+<label>
+    <input type="checkbox" id="IncUC" checked>
+    Include Uppercase
+</label>
+<br>
+<label>
+    <input type="checkbox" id="IncNum" checked>
+    Include Numbers
+</label>
+<br>
+<label>
+    <input type="checkbox" id="IncSym" checked>
+    Include Symbols
+</label>
+<br><br>
+<button id="generate"  class="buttons">Generate Password</button>
+<br><br>
+<input type="text" id="password"  readonly>
 
 <script src = "index.js"></script>
 </body>

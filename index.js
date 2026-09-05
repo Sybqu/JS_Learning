@@ -209,11 +209,87 @@ function genpass(length, IncLC, IncUC, IncNum, IncSym) {
     return password;
 }
 
+const lengthInput = document.getElementById("length");
 
-const passLen = 8;
-const IncLC = true;
-const IncUC = true;
-const IncNum = true;
-const IncSym = true;
+const IncLC = document.getElementById("IncLC");
+const IncUC = document.getElementById("IncUC");
+const IncNum = document.getElementById("IncNum");
+const IncSym = document.getElementById("IncSym");
 
-const random_pass = genpass(passLen, IncLC, IncUC, IncNum, IncSym);
+const generateBtn = document.getElementById("generate");
+const passwordOutput = document.getElementById("password");
+
+generateBtn.onclick = function () {
+
+    const length = Number(lengthInput.value);
+
+    const random_pass = genpass(
+        length,
+        IncLC.checked,
+        IncUC.checked,
+        IncNum.checked,
+        IncSym.checked
+    );
+
+    passwordOutput.value = random_pass;
+};
+
+
+//callback functions: function passed to another function!
+function hello(callback){
+    console.log("HEllo chat");
+    callback();
+}
+function goodbye(){
+    console.log("Goodbye chat");
+}
+hello(goodbye);
+
+//forEach() = This methods goes through the iterable and applies callback as side effects does not return a new array
+/* array.forEach(callback) 
+element,index and array are provided as parameters of the callback function 
+*/
+
+// map() just like python , returns a new array
+// array.map(func())
+
+// .filter() creates a new array but filtering out elements
+
+
+// .reduce() Reduces the elements of an array to a single value
+
+// function expressions : way to define functions as values or variables
+
+setTimeout(function(){
+    console.log("gm");
+},3000);
+
+const gm = function GM(){
+    console.log("HEllo");
+}
+setTimeout(gm,1000);
+
+// arrow functions good for simple functions which are only used once
+
+const meow = (name,caste) => console.log("MOG MOG M OG " + name + caste);
+
+meow("burrah","jatt nu kehnde clutch baliyee");
+// ============================= OOP ====================================
+// object{key:value,function()}
+// This keyword already studied in java ^^ <3
+// Constructors
+
+function car(name,brand,color,CC){
+    this.name=name;
+    this.brand=brand;
+    this.color=color;
+    this.CC=CC;
+}
+
+const car1 = new car("jesko","koenigsegg","green","boht tez")
+
+// Classes
+// Static keyword
+// inheritance
+// Super
+// Getters and setters (forgor)

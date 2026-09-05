@@ -58,3 +58,18 @@ input[type="checkbox"] {
 #txt:hover{
     background-color:white;
 }
+#length{
+        width: 10em;
+        height: 3em;
+        
+}
+input {
+    position: relative;
+    top: -5px;
+}
+#password{
+    height: 3em;
+    width:15em;
+    font-weight: bolder;
+    font-size: x-large;
+}
