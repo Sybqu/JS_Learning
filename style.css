@@ -73,3 +73,106 @@ input {
     font-weight: bolder;
     font-size: x-large;
 }
+
+#clock-container{
+    display:flex;
+    text-align: center;
+    border-style:double;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    border-color: transparent;
+    background-image: url(Cool\ Background.jpg);    
+    background-position: center;
+    height: 100vh;
+
+}
+#CLOCK{
+    color: crimson;
+    font-size: xxx-large;
+    font-weight: 600;
+    font-family: monospace;
+}
+.calculator {
+  width: 320px;
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 16px;
+  background: #1e1e1e;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.calc-display {
+  text-align: right;
+  padding: 16px 12px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.calc-history {
+  font-size: 14px;
+  color: #888;
+  min-height: 18px;
+}
+
+.calc-current {
+  font-size: 40px;
+  font-weight: 300;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 18px 0;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn:hover {
+  background: #444;
+}
+
+.btn:active {
+  background: #555;
+}
+
+.btn-op {
+  background: #ff9500;
+  color: #fff;
+}
+
+.btn-op:hover {
+  background: #ffaa2b;
+}
+
+.btn-clear {
+  background: #a5a5a5;
+  color: #000;
+}
+
+.btn-clear:hover {
+  background: #bbb;
+}
+
+.btn-equals {
+  background: #ff9500;
+}
+
+.btn-zero {
+  grid-column: span 2;
+  border-radius: 30px;
+  text-align: left;
+  padding-left: 24px;
+}

@@ -278,7 +278,6 @@ meow("burrah","jatt nu kehnde clutch baliyee");
 // object{key:value,function()}
 // This keyword already studied in java ^^ <3
 // Constructors
-
 function car(name,brand,color,CC){
     this.name=name;
     this.brand=brand;
@@ -293,3 +292,32 @@ const car1 = new car("jesko","koenigsegg","green","boht tez")
 // inheritance
 // Super
 // Getters and setters (forgor)
+// Destructuring , array [] objects {} extract values and assign em to vars
+// Nested objects
+// Array of objects  just like a dictionary
+// Sorting 
+// Date Objects
+// CLOSURES!!!
+// setTimeout(callback,delay);
+// clearTimeout(timeoutId);
+
+// CLock program
+function updateclock(){
+const date_today = new Date();
+var hours = date_today.getHours();
+var meridem = hours >= 12 ? "PM" : "AM";
+hours = hours.toString().padStart(2,0);
+var minutes = date_today.getMinutes().toString().padStart(2,0);
+var seconds = date_today.getSeconds().toString().padStart(2,0);
+var time_string = `${hours}:${minutes}:${seconds} ${meridem}`
+document.getElementById("CLOCK").textContent=time_string;
+}
+setInterval(updateclock,1000);
+
+// stop watch program
+// ES6 MODULES!!!!
+// are basically function files which u can export for reusability
+// ASYNC CODE!!!!!
+// ERROR HANDLING FUNK NAH
+
+// Calculator place holder(...)

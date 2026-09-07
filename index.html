@@ -73,7 +73,43 @@
 <button id="generate"  class="buttons">Generate Password</button>
 <br><br>
 <input type="text" id="password"  readonly>
+<div id="clock-container">
+    <label></label><br>
+    <br>
+    <heading id="CLOCK"></heading>
+</div>
+<br><BR><BR><BR><BR>
+<div class="calculator">
+  <div class="calc-display">
+    <div class="calc-history"></div>
+    <div class="calc-current">0</div>
+  </div>
+  <div class="calc-buttons">
+    <button class="btn btn-clear" data-action="clear">C</button>
+    <button class="btn btn-op" data-action="sign">+/-</button>
+    <button class="btn btn-op" data-action="percent">%</button>
+    <button class="btn btn-op" data-action="divide">÷</button>
 
+    <button class="btn" data-num="7">7</button>
+    <button class="btn" data-num="8">8</button>
+    <button class="btn" data-num="9">9</button>
+    <button class="btn btn-op" data-action="multiply">×</button>
+
+    <button class="btn" data-num="4">4</button>
+    <button class="btn" data-num="5">5</button>
+    <button class="btn" data-num="6">6</button>
+    <button class="btn btn-op" data-action="subtract">−</button>
+
+    <button class="btn" data-num="1">1</button>
+    <button class="btn" data-num="2">2</button>
+    <button class="btn" data-num="3">3</button>
+    <button class="btn btn-op" data-action="add">+</button>
+
+    <button class="btn btn-zero" data-num="0">0</button>
+    <button class="btn" data-action="decimal">.</button>
+    <button class="btn btn-equals" data-action="equals">=</button>
+  </div>
+</div>
 <script src = "index.js"></script>
 </body>
 </html>
