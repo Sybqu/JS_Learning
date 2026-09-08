@@ -321,3 +321,6 @@ setInterval(updateclock,1000);
 // ERROR HANDLING FUNK NAH
 
 // Calculator place holder(...)
+
+// IMPORTANT! DOM : DOCUMENT OBJECT MODEL
+// ELEMENT SELECTORS IN JS
