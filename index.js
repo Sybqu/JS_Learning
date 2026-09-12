@@ -324,3 +324,11 @@ setInterval(updateclock,1000);
 
 // IMPORTANT! DOM : DOCUMENT OBJECT MODEL
 // ELEMENT SELECTORS IN JS
+
+const elements = ["Hello", "World", "Bro", "Random"];
+
+const randomElement = document.getElementById("randomElement");
+
+const randomIndex = Math.floor(Math.random() * elements.length);
+
+randomElement.textContent = elements[randomIndex];
