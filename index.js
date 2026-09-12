@@ -332,3 +332,12 @@ const randomElement = document.getElementById("randomElement");
 const randomIndex = Math.floor(Math.random() * elements.length);
 
 randomElement.textContent = elements[randomIndex];
+
+const elements = ["div", "p", "h1", "button"];
+
+const randomTag = elements[Math.floor(Math.random() * elements.length)];
+
+const element = document.createElement(randomTag);
+element.textContent = "Random Element";
+
+document.body.appendChild(element);
