@@ -333,11 +333,18 @@ const randomIndex = Math.floor(Math.random() * elements.length);
 
 randomElement.textContent = elements[randomIndex];
 
-const elements = ["div", "p", "h1", "button"];
+const elements1 = ["div", "p", "h1", "button"];
 
-const randomTag = elements[Math.floor(Math.random() * elements.length)];
+const randomTag = elements1[Math.floor(Math.random() * elements.length)];
 
 const element = document.createElement(randomTag);
 element.textContent = "Random Element";
 
 document.body.appendChild(element);
+
+const DOMMANIPULATION = document.getElementById("DOMmanipulation");
+const ulelements = document.querySelectorAll("ul");
+ulelements.forEach(ulelement => {
+    const firstchild = ulelement.firstElementChild;
+    firstchild.computedStyleMap.backgroundColor = "yellow";
+});
