@@ -333,11 +333,66 @@ const randomIndex = Math.floor(Math.random() * elements.length);
 
 randomElement.textContent = elements[randomIndex];
 
-const elements = ["div", "p", "h1", "button"];
+const elements1 = ["div", "p", "h1", "button"];
 
-const randomTag = elements[Math.floor(Math.random() * elements.length)];
+const randomTag = elements1[Math.floor(Math.random() * elements.length)];
 
 const element = document.createElement(randomTag);
-element.textContent = "Random Element";
+element.textContent = "ChaKaidi?";
 
 document.body.appendChild(element);
+
+const DOMMANIPULATION = document.getElementById("DOMmanipulation");
+const olelements = document.querySelectorAll("ol");
+olelements.forEach(olelement => {
+    const firstchild = olelement.firstElementChild;
+    const sihhbling = olelement.nextElementSibling;
+    firstchild.style.backgroundColor = "yellow";
+    sihhbling.style.backgroundColor = "pink";
+});
+
+const eventbox = document.getElementById("eventlisteners");
+
+// .addEventListener(event,callback)
+
+function Changecolor(event){
+    eventbox.style.backgroundColor="red";
+    console.log(event);
+}
+
+function randomcolor(){
+    const r = Math.random()*256;
+    const g = Math.random()*256;
+    const b = Math.random()*256;
+
+    eventbox.style.backgroundColor = `rgb(${r},${g},${b})`;
+    console.log("am i working?!");
+}
+eventbox.addEventListener("mouseenter",randomcolor);
+eventbox.addEventListener("mouseleave",randomcolor);
+
+let ycod = 0;
+let xcod = 0;
+document.addEventListener("keydown", event => {
+     console.log(event.key);
+    if(event.key.startsWith("Arrow")){
+        switch(event.key){
+
+            case "ArrowUp":
+                ycod-=10;
+                break;
+            case "ArrowDown":
+                ycod+=10;
+                break;
+            case "ArrowRight":
+                xcod+=10;
+                break;
+            case "ArrowLeft":
+                xcod-=10;
+                break;            
+        }
+    }
+    eventbox.style.top=`${ycod}px`;
+    eventbox.style.marginLeft=`${xcod}px`;
+});
+
