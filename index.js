@@ -343,6 +343,12 @@ element.textContent = "ChaKaidi?";
 document.body.appendChild(element);
 
 const DOMMANIPULATION = document.getElementById("DOMmanipulation");
+const ulelements = document.querySelectorAll("ul");
+ulelements.forEach(ulelement => {
+    const firstchild = ulelement.firstElementChild;
+    firstchild.computedStyleMap.backgroundColor = "yellow";
+});
+
 const olelements = document.querySelectorAll("ol");
 olelements.forEach(olelement => {
     const firstchild = olelement.firstElementChild;
@@ -396,3 +402,19 @@ document.addEventListener("keydown", event => {
     eventbox.style.marginLeft=`${xcod}px`;
 });
 
+//nodelist
+//classlist
+
+
+calc_buttons = document.querySelectorAll(".btn");
+calc_display = document.querySelector(".calc-current");
+
+
+calc_buttons.forEach(btn  => {
+    btn.addEventListener("click",() => {
+        calc_display.textContent += btn.dataset.num;
+
+    }
+    )
+    
+});
