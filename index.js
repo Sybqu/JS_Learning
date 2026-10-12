@@ -338,7 +338,7 @@ const elements1 = ["div", "p", "h1", "button"];
 const randomTag = elements1[Math.floor(Math.random() * elements.length)];
 
 const element = document.createElement(randomTag);
-element.textContent = "Random Element";
+element.textContent = "ChaKaidi?";
 
 document.body.appendChild(element);
 
@@ -348,3 +348,161 @@ ulelements.forEach(ulelement => {
     const firstchild = ulelement.firstElementChild;
     firstchild.computedStyleMap.backgroundColor = "yellow";
 });
+
+const olelements = document.querySelectorAll("ol");
+olelements.forEach(olelement => {
+    const firstchild = olelement.firstElementChild;
+    const sihhbling = olelement.nextElementSibling;
+    firstchild.style.backgroundColor = "yellow";
+    sihhbling.style.backgroundColor = "pink";
+});
+
+const eventbox = document.getElementById("eventlisteners");
+
+// .addEventListener(event,callback)
+
+function Changecolor(event){
+    eventbox.style.backgroundColor="red";
+    console.log(event);
+}
+
+function randomcolor(){
+    const r = Math.random()*256;
+    const g = Math.random()*256;
+    const b = Math.random()*256;
+
+    eventbox.style.backgroundColor = `rgb(${r},${g},${b})`;
+    console.log("am i working?!");
+}
+eventbox.addEventListener("mouseenter",randomcolor);
+eventbox.addEventListener("mouseleave",randomcolor);
+
+let ycod = 0;
+let xcod = 0;
+document.addEventListener("keydown", event => {
+     console.log(event.key);
+    if(event.key.startsWith("Arrow")){
+        switch(event.key){
+
+            case "ArrowUp":
+                ycod-=10;
+                break;
+            case "ArrowDown":
+                ycod+=10;
+                break;
+            case "ArrowRight":
+                xcod+=10;
+                break;
+            case "ArrowLeft":
+                xcod-=10;
+                break;            
+        }
+    }
+    eventbox.style.top=`${ycod}px`;
+    eventbox.style.marginLeft=`${xcod}px`;
+});
+
+//nodelist
+//classlist
+const display = document.querySelector(".calc-current");
+
+let first = 0;
+let op = "";
+
+const operations = {
+    add: (a, b) => a + b,
+    subtract: (a, b) => a - b,
+    multiply: (a, b) => a * b,
+    divide: (a, b) => a / b
+};
+
+document.querySelectorAll(".btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        if (btn.dataset.num !== undefined) {
+            display.textContent =
+                display.textContent === "0"
+                    ? btn.dataset.num
+                    : display.textContent + btn.dataset.num;
+        }
+
+        else if (btn.dataset.action === "clear") {
+            display.textContent = "0";
+            first = 0;
+            op = "";
+        }
+
+        else if (operations[btn.dataset.action]) {
+            first = Number(display.textContent);
+            op = btn.dataset.action;
+            display.textContent = "0";
+        }
+
+        else if (btn.dataset.action === "equals" && op) {
+            display.textContent = operations[op](
+                first,
+                Number(display.textContent)
+            );
+            op = "";
+        }
+    });
+});
+
+
+// classlist , allows u  to interact w an element list of classes , resuable classes 
+// add() , remove() , toggle(Remove if present,add if not)
+// replace(oldClass,newClass)
+// contains()
+
+//rps
+
+pchoice = document.getElementById("pchoice");
+choice = document.getElementById("choice");
+dis = document.getElementById("display");
+
+const choices = ["rock", "paper", "scissors"];
+
+function playgame(plchoice) {
+    dis.classList.remove("bluetxt", "redtxt");
+    const cmpchoice = choices[Math.floor(Math.random() * 3)];
+
+
+    pchoice.textContent =("Player Choice: " + plchoice);
+    choice.textContent = ("Computer Choice: " + cmpchoice);    
+
+    if (plchoice === cmpchoice) {
+        console.log("Draw!");
+        result="draw";
+        dis.textContent = "ITS A TIE";
+
+    } 
+    else if (
+        (plchoice === "rock" && cmpchoice === "scissors") ||
+        (plchoice === "paper" && cmpchoice === "rock") ||
+        (plchoice === "scissors" && cmpchoice === "paper")
+    ) {
+        console.log("You win!");
+        result="win";
+        dis.classList.add("bluetxt");
+        dis.textContent = "YOU WIN!";
+
+        
+    
+    } 
+    else {
+        console.log("Computer wins!");
+        result="loss";
+        dis.classList.add("redtxt");
+        dis.textContent="HAHAHA LOSERRR";
+        
+    }
+}
+
+const bt = document.querySelectorAll(".buttonrps");
+
+bt.forEach(btn =>{
+    btn.addEventListener('click',()=>{
+    playgame(btn.dataset.choice);
+  })    
+}
+);
+
