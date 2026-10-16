@@ -506,3 +506,40 @@ bt.forEach(btn =>{
 }
 );
 
+taxt = document.getElementById("txts");
+
+const sumbit = document.getElementById("mokeponBtn");
+
+async function fetchmkpn() {
+  try {
+    const taxt = document.getElementById("mokeponInput");
+    const pokemon = taxt.value.trim().toLowerCase();
+
+    console.log("Fetching Pokemon:", pokemon); // Check what this prints in Console!
+
+    if (!pokemon) {
+      console.warn("Input box is empty! Type 'pikachu' in the box first.");
+      return;
+    }
+
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+
+    if (!response.ok) {
+      throw new Error("keep it lowk yeah u know me?!");
+    }
+
+    const kdot = await response.json();
+    const mkpnsprite = kdot.sprites.front_default;
+
+    console.log("Sprite URL found:", mkpnsprite); // Should print a raw.githubusercontent.com link
+
+    const img = document.getElementById("mokeponSprite");
+    img.src = mkpnsprite;
+    img.style.display = "block";
+
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+sumbit.addEventListener("click", fetchmkpn);
